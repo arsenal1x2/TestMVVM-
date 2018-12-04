@@ -10,6 +10,9 @@ import UIKit
 
 class PersonTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +22,11 @@ class PersonTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    func configCell(person: PersonViewModel) {
+        nameLabel.text = person.nameText
+        ageLabel.text = person.ageText
     }
 
 }
